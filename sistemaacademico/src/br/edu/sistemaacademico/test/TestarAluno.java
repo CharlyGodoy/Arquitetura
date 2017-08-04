@@ -41,42 +41,42 @@ public class TestarAluno {
 		
 	}
 	
-	@Test
-	public void cadastrarUsuario() {
-		
-		Usuario novoUsuario = new Usuario();
-		novoUsuario.setUsuarioId(null);
-		novoUsuario.setNome("Charly");
-		novoUsuario.setEndereco("1615060");
-		novoUsuario.setTelefone("9999-0000");
-		novoUsuario.setLogin("CharlyGodoy");
-		novoUsuario.setSenha("123");
-		novoUsuario.setCpf("123456789");
-		novoUsuario.setTipoUsuario(1);
-		
-		new UsuarioDao().salvar(novoUsuario);
-		
-		Assert.assertEquals(true, novoUsuario.getUsuarioId() != null);
-		
-	}	
-	
-	
-	@Test
-	public void zcadastrarPet() {
-		
-		Pet novoPet = new Pet();
-		novoPet.setPetId(null);
-		novoPet.setNome("Charly");
-		novoPet.setTipo("Peixe");
-		novoPet.setRaca("Tubarão-Martelo");
-		novoPet.setPeso(120.5);
-		novoPet.setDataNascimento(null);
-		//novoPet.setUsuario();
-		
-		new PetDao().salvar(novoPet);
-		
-		Assert.assertEquals(true, novoPet.getPetId() != null);
-		
-	}
+//	@Test
+//	public void cadastrarUsuario() {
+//		
+//		Usuario novoUsuario = new Usuario();
+//		novoUsuario.setUsuarioId(null);
+//		novoUsuario.setNome("Charly");
+//		novoUsuario.setEndereco("1615060");
+//		novoUsuario.setTelefone("9999-0000");
+//		novoUsuario.setLogin("CharlyGodoy");
+//		novoUsuario.setSenha("123");
+//		novoUsuario.setCpf("123456789");
+//		novoUsuario.setTipoUsuario(1);
+//		
+//		new UsuarioDao().salvar(novoUsuario);
+//		
+//		Assert.assertEquals(true, novoUsuario.getUsuarioId() != null);
+//		
+//	}	
+//	
+//	
+//	@Test
+//	public void zcadastrarPet() {
+//		
+//		Pet novoPet = new Pet();
+//		novoPet.setPetId(null);
+//		novoPet.setNome("Charly");
+//		novoPet.setTipo("Peixe");
+//		novoPet.setRaca("Tubarão-Martelo");
+//		novoPet.setPeso(120.5);
+//		novoPet.setDataNascimento(null);
+//		//novoPet.setUsuario();
+//		
+//		new PetDao().salvar(novoPet);
+//		
+//		Assert.assertEquals(true, novoPet.getPetId() != null);
+//		
+//	}
 	
 }
