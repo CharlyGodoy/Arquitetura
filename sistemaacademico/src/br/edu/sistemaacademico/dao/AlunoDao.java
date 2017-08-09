@@ -9,12 +9,11 @@ import javax.persistence.Query;
 
 import br.edu.sistemaacademico.entity.Aluno;
 
-public class AlunoDao {
+public class AlunoDao implements InterfaceDao<Aluno> {
 
-	EntityManagerFactory emf = Persistence.createEntityManagerFactory("sistemaacademico");
 	
 	public void salvar(Aluno a) {
-		EntityManager em = emf.createEntityManager();
+		EntityManager em = Conexao.getInstance().createEntityManager();
 		
 		em.getTransaction().begin();
 		em.persist(a);
@@ -25,7 +24,7 @@ public class AlunoDao {
 	}
 
 	public List<Aluno> listar() {
-		EntityManager em = emf.createEntityManager();
+		EntityManager em = Conexao.getInstance().createEntityManager();
 		
 		Query q = em.createQuery("from Aluno");
 		

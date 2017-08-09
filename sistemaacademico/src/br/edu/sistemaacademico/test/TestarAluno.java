@@ -8,6 +8,8 @@ import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
 
+import br.edu.sistemaacademico.business.BusinessAluno;
+import br.edu.sistemaacademico.business.BusinessException;
 import br.edu.sistemaacademico.dao.AlunoDao;
 import br.edu.sistemaacademico.dao.PetDao;
 import br.edu.sistemaacademico.dao.UsuarioDao;
@@ -26,7 +28,15 @@ public class TestarAluno {
 		a.setNome("Charly");
 		a.setMatricula("1615060");
 		
-		new AlunoDao().salvar(a);
+		BusinessAluno businessAluno = new BusinessAluno();
+		
+		try{
+			businessAluno.salvar(a);
+		}catch (BusinessException e){
+			e.printStackTrace();
+		}
+		
+		//new AlunoDao().salvar(a);
 		
 		Assert.assertEquals(true, a.getId() != null);
 		
